@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>P4 - Praktikum 16</title>
+        <script>
+        var vid_user, vpassword,vlev_user;
+        
+        function login(){
+            vid_user=(frlogin.txtiduser.value);
+            vpassword=(frlogin.txtpass.value);
+            vlev_user=(frlogin.cblevuser.value);
+            if (vid_user==""){
+                window.alert("ID. User belum diisi");
+                frlogin.txtiduser.focus();
+                return false;
+            }
+            else if(vpassword==""){
+                window.alert("Password belum diisi");
+                frlogin.txtpass.focus();
+                return false;
+            }
+            else if(vlev_user==""){
+                window.alert("Level user belum diisi");
+                return false;
+            }
+            else{
+                window.alert("Anda login sebagai "+vlev_user);
+            }
+            return true;
+        }
+        </script>
+    </head>
+    <body>
+        <form name="frlogin"method="post"action=""target=""onsubmit="return login()">
+            <table align="center">
+                <tr>
+                    <td>
+                        <fieldset>
+                        <legend>Login System</legend>
+                        <label for="txtiduser">ID. User</label><br>
+                        <input type="text"id="txtiduser"name="txtiduser"size="35"placeholder="ID. User"><br>
+                        <label for="txtpass">Password</label><br>
+                        <input type="password"id="txtpass"name="txtpass"size="35"placeholder="password"><br>
+                        <label for="cvlevuser">Level user</label><br>
+                        <select name=cblevuser style="width:100%">
+                            <option value="">-Pilih level User--</option>
+                            <option value="Administrator">Administrator</option>
+                            <option value="User">User</option>
+                        </select><br><br>
+                        <input type="submit"value="Login">&nbsp;<input type="reset"value="Batal">
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

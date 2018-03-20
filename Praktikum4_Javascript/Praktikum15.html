@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>P4 - Praktikum 15</title>
+        <script>
+        var mincar=5;
+        pola_username=/^[a-zA-Z0-9\_\-]{8,100}$/;
+        pola_email=/^[a-zA-z0-9._-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        function validasi input(){
+            if (frregistrasi.txtiduser.value==""){
+                alert("ID User masih kosong!");
+                frregistrasi.txtiduser.focus();
+            }
+            if (frregistrasi.txtiduser.value.length < mincar){
+                alert("Panjag ID.User Minimal 5 karakter");
+                frregistrasi.txtiduser.focus();
+                return (false);
+            }
+            if (!pola_username.test(frregistrasi.txtusername.value)){
+                alert('Username minimal 8 karakter dan hanya boleh huruf atau angka !');
+                frregistrasi.txtusername.focus();
+                return false;
+            }
+            if (frregistrasi.txtpass.value==""){
+                alert('Password harus diisi');
+                frregistrasi.txtpass.focus();
+                return false;
+            }
+            if (!pola_email.test(frregistrasi.txtemail.value)){
+                alert('Penulisan email tidak benar');
+                frregistrasi.txtmail.focus();
+                return false;
+            }
+            return (true)
+        }
+        </script>
+    </head>
+    <body>
+        <form name="frregistrasi"method="post" action="" target="" onsubmit="return validasi_input()">
+        <table align ="Center">
+            <tr>
+                <td>
+                   <fieldset>
+                    <legend>Form Registrasi</legend>
+                    <label for="txtiduser">ID. User</label><br>
+                    <input type="text"name="txtiduser"size="35"placeholder="ID. User"><br>
+                    <label for="txtusername">Username</label><br>
+                    <input type="text"name="txtusername"size="35"placeholder="Username"><br>
+                    <label for="txtpass">Password</label><br>
+                    <input type="password"name="txtpass"size="35"placeholder="password"><br>
+                    <label for="txtemail">Email</label><br>
+                    <input type="email"name="txtemail"size="35"placeholder="Email"><br>
+                    <hr>
+                    <input type="submit"value="login">&nbsp;<input type="reset"value="Batal">
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>
